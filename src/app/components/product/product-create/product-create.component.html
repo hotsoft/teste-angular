@@ -1,4 +1,10 @@
-<p [id]="proplegal">product-create works!</p>
+<p>product-create works!</p>
 
-<button (click)="fazerAlgo()">Fazer algo!</button>
+<button mat-raised-button (click)="createProduct()" color="primary">
+  Salvar
+</button>
+<button mat-raised-button (click)="cancel()" color="danger">
+  Cancelar
+</button>
+
 
