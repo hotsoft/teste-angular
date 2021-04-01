@@ -1,6 +1,6 @@
 import { DataSource } from '@angular/cdk/collections';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+// import { MatPaginator } from '@angular/material/paginator';
+// import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
@@ -41,8 +41,8 @@ const EXAMPLE_DATA: ProductRead2Item[] = [
  */
 export class ProductRead2DataSource extends DataSource<ProductRead2Item> {
   data: ProductRead2Item[] = EXAMPLE_DATA;
-  paginator: MatPaginator;
-  sort: MatSort;
+  // paginator: MatPaginator;
+  // sort: MatSort;
 
   constructor() {
     super();
@@ -58,12 +58,13 @@ export class ProductRead2DataSource extends DataSource<ProductRead2Item> {
     // stream for the data-table to consume.
     const dataMutations = [
       observableOf(this.data),
-      this.paginator.page,
-      this.sort.sortChange
+      //this.paginator.page,
+      //this.sort.sortChange
     ];
 
     return merge(...dataMutations).pipe(map(() => {
-      return this.getPagedData(this.getSortedData([...this.data]));
+      // return this.getPagedData(this.getSortedData([...this.data]));
+      return this.data
     }));
   }
 
@@ -78,8 +79,8 @@ export class ProductRead2DataSource extends DataSource<ProductRead2Item> {
    * this would be replaced by requesting the appropriate data from the server.
    */
   private getPagedData(data: ProductRead2Item[]) {
-    const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
-    return data.splice(startIndex, this.paginator.pageSize);
+    // const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
+    // return data.splice(startIndex, this.paginator.pageSize);
   }
 
   /**
@@ -87,8 +88,8 @@ export class ProductRead2DataSource extends DataSource<ProductRead2Item> {
    * this would be replaced by requesting the appropriate data from the server.
    */
   private getSortedData(data: ProductRead2Item[]) {
-    if (!this.sort.active || this.sort.direction === '') {
-      return data;
+    /* if (!this.sort.active || this.sort.direction === '') {
+      return data; 
     }
 
     return data.sort((a, b) => {
@@ -98,7 +99,7 @@ export class ProductRead2DataSource extends DataSource<ProductRead2Item> {
         case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }
-    });
+    });*/
   }
 }
 
