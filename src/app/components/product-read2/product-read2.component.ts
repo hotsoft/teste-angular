@@ -10,21 +10,21 @@ import { ProductRead2DataSource, ProductRead2Item } from './product-read2-dataso
   styleUrls: ['./product-read2.component.css']
 })
 export class ProductRead2Component implements AfterViewInit, OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  /*@ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatTable) table: MatTable<ProductRead2Item>;
-  dataSource: ProductRead2DataSource;
+  dataSource: ProductRead2DataSource;*/
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name'];
 
   ngOnInit() {
-    this.dataSource = new ProductRead2DataSource();
+    // this.dataSource = new ProductRead2DataSource();
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+    /* this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    this.table.dataSource = this.dataSource; */
   }
 }
