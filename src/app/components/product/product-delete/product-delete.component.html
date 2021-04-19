@@ -3,12 +3,12 @@
   <form>
     <mat-form-field>
       <input matInput placeholder="Nome"
-        [(value)]="product.name" name="name" disabled
+        [value]="product.name" name="name" disabled
       >
     </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="Preço (R$)"
-        [(value)]="product.price" name="price" disabled
+        [value]="product.price" name="price" disabled
       >
     </mat-form-field>
   </form>
@@ -16,7 +16,7 @@
     Excluir
   </button>
 
-  <button mat-raised-button (click)="cancel()" color="warn">
+  <button mat-raised-button (click)="cancel()" color="accent">
     Cancelar
   </button>
 </mat-card>
