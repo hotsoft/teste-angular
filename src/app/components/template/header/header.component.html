@@ -1,15 +1,15 @@
 <mat-toolbar class="header mat-elevation-z4">
   <span>
-    <a  routerLink="/">
-      <img class="logo" src="assets/img/AngularJS_logo.svg.png" alt="logo">
+    <a routerLink="/">
+      <img class="logo" src="assets/img/AngularJS_logo.svg.png" alt="logo" />
     </a>
   </span>
-  <!-- <span class="title-group">
-    <a>
+  <span class="title-group">
+    <a routerLink="{{ routeUrl }}">
       <i class="material-icons">
-        home
+        {{ icon }}
       </i>
-      Início 
+      {{ title }}
     </a>
-  </span> -->
+  </span>
 </mat-toolbar>
